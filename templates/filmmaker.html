@@ -1,31 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>filmmaker</title>
-</head>
-<body>
-    <div>
-        <form method="post" action="." novalidate enctype="multipart/form-data">
 
 {% extends 'base.html' %}
 {% load crispy_forms_filters %}
 {% block content %}
 
 
-    <div class="container">
-     <h2> FileMaker | Add Data  </h2>
-        <div class="row">
-        <div class="col-md-6">
+            <div class="container">
+                <h2> FileMaker | Add Data </h2>
+                <div class="row">
+
+                    <form method="post" action="" novalidate enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <div class="col-md-4">
+                            {{ form.first_name|as_crispy_field }}
+                        </div>
+                        <div class="col-md-4">
+                            {{ form.last_name|as_crispy_field }}
+                        </div>
+
+                        <button>Submit</button>
+                    </form>
+                </div>
 
 
-        <form method="post" action="" novalidate enctype="multipart/form-data">
-            {% csrf_token %}
-            {{ form|crispy }}
-            <button>Submit</button>
-        </form>
-        </div>
-        </div>
-        
-    </div>
-{% endblock content %}
+            </div>
+
+        {% endblock content %}
