@@ -68,4 +68,6 @@ class FileMaker(models.Model):
     other_contact = models.IntegerField()
 
     nyc_agency = models.PositiveSmallIntegerField(choices=NYC_AGENCY_CHOICES, null=True)
+    legislature = models.PositiveSmallIntegerField(choices=LEGISLATURE, null=True)
+    uai_bany = models.PositiveSmallIntegerField(choices=UAI_BANY, null=True)
 
