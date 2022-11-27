@@ -27,7 +27,8 @@ class FileMakerDetailView(DetailView):
 class FileMakerFilter(django_filters.FilterSet):
     class Meta:
         model = FileMaker
-        fields = ['first_name', 'last_name', 'agencyCompany', 'department', 'project_partners']
+        fields = ['first_name', 'last_name', 'agencyCompany', 'department',
+                  'email', 'phone', 'country', 'skype_name', 'city', 'state']
 
 
 class FileMakerListView(ListView):
@@ -58,8 +59,9 @@ class SearchFileMakerListView(FilterView):
         qs = super().get_queryset()
         query = self.request.GET.get('search')
         if query:
-            qs = FileMaker.objects.filter(Q(first_name=query) | Q(last_name=query) |
-                                          Q(agencyCompany=query) | Q(
-                department__icontains=query) | Q(project_partners__icontains=query)).order_by('-id')
+            qs = FileMaker.objects.filter(Q(first_name=query) | Q(last_name=query) | Q(email=query) |
+                                          Q(phone=query) | Q(country=query) | Q(skype_name=query) |
+                                          Q(city=query) | Q(state=query) |
+                                          Q(agencyCompany=query) | Q(department__icontains=query)).order_by('-id')
             return qs
         return qs

@@ -6,20 +6,35 @@
            <div class="row height d-flex justify-content-center align-items-center">
 
 
-                <div class="col">
+                <div class="col-md-3">
                       {{ filter.form.first_name|as_crispy_field}}
                 </div>
-                 <div class="col">
+                 <div class="col-md-3">
                       {{ filter.form.last_name|as_crispy_field}}
                 </div>
-                 <div class="col">
+                 <div class="col-md-3">
                       {{ filter.form.agencyCompany|as_crispy_field}}
                 </div>
-                  <div class="col">
+                  <div class="col-md-3">
                       {{ filter.form.department|as_crispy_field}}
                 </div>
-                    <div class="col">
-                      {{ filter.form.project_partners|as_crispy_field}}
+               <div class="col-md-3">
+                      {{ filter.form.email|as_crispy_field}}
+                </div>
+               <div class="col-md-3">
+                      {{ filter.form.phone|as_crispy_field}}
+                </div>
+               <div class="col-md-3">
+                      {{ filter.form.skype_name|as_crispy_field}}
+                </div>
+               <div class="col-md-3">
+                      {{ filter.form.city|as_crispy_field}}
+                </div>
+               <div class="col-md-3">
+                      {{ filter.form.country|as_crispy_field}}
+                </div>
+               <div class="col-md-3">
+                      {{ filter.form.state|as_crispy_field}}
                 </div>
               <button type="submit" class="sch btn btn-lg btn-primary px-3 mt-5">Search</button>
 
@@ -33,7 +48,7 @@
 
 
             <div class="col-md-9">
-{#                    <a href="{% file_maker_detail %} ">     {{ data.first_name }} </a>#}\
+{#                    <a href="{% file_maker_detail %} ">     {{ data.first_name }} </a>#}
 
 
             <table class="table table-bordered">
@@ -44,6 +59,12 @@
                   <th scope="col">Country</th>
                   <th scope="col">Agency Company</th>
                   <th scope="col">Department</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Phone</th>
+                    <th scope="col">Skype Name</th>
+                    <th scope="col">City</th>
+                    <th scope="col">state</th>
+
                 </tr>
               </thead>
                 {% for data in file_maker_list %}
@@ -54,6 +75,11 @@
                   <td>            {{ data.country }}</td>
                   <td>           {{ data.agencyCompany }}</td>
                   <td>        {{ data.department }}</td>
+                  <td>{{data.email}}</td>
+                  <td>{{data.phone}}</td>
+                    <td>{{data.skype_name}}</td>
+                    <td>{{data.city}}</td>
+                    <td>{{data.state}}</td>
                 </tr>
 
               </tbody>
