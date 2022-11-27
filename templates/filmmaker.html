@@ -1,4 +1,3 @@
-
 {% extends 'base.html' %}
 {% load crispy_forms_filters %}
 {% block content %}
@@ -10,12 +9,153 @@
 
                     <form method="post" action="" novalidate enctype="multipart/form-data">
                         {% csrf_token %}
+                        <div class="row">
                         <div class="col-md-4">
                             {{ form.first_name|as_crispy_field }}
                         </div>
                         <div class="col-md-4">
+                            {{ form.middle_name|as_crispy_field }}
+                        </div>
+                        <div class="col-md-4">
                             {{ form.last_name|as_crispy_field }}
                         </div>
+                            </div>
+
+
+
+                        <div class="row">
+                            <div class="col-md-4">
+                            {{ form.sal|as_crispy_field }}
+                        </div>
+                        <div class="col-md-4">
+                            {{ form.sal1|as_crispy_field }}
+                        </div>
+                            <div class="col-md-4">
+                            {{ form.email|as_crispy_field }}
+                        </div>
+                            </div>
+
+                        <div class="row">
+                          <div class="col-md-4">
+                            {{ form.country|as_crispy_field }}
+                        </div>
+                        <div class="col-md-4">
+                            {{ form.title|as_crispy_field }}
+                        </div>
+                        <div class="col-md-4">
+                            {{ form.agencyCompany|as_crispy_field }}
+                        </div>
+                        </div>
+
+
+                        <div class="row">
+                            <div class="col-md-4">
+                            {{ form.division|as_crispy_field }}
+                        </div>
+                        <div class="col-md-4">
+                            {{ form.department|as_crispy_field }}
+                        </div>
+                        <div class="col-md-4">
+                            {{ form.address1|as_crispy_field }}
+                        </div>
+                        </div>
+
+
+                        <div class="row">
+                            <div class="col-md-4">
+                            {{ form.address2|as_crispy_field }}
+                        </div>
+                        <div class="col-md-4">
+                            {{ form.city|as_crispy_field }}
+                        </div>
+                        <div class="col-md-4">
+                            {{ form.state|as_crispy_field }}
+                        </div>
+                        </div>
+
+
+                        <div class="row">
+                            <div class="col-md-4">
+                            {{ form.zip|as_crispy_field }}
+                        </div>
+                        <div class="col-md-4">
+                            {{ form.zip2|as_crispy_field }}
+                        </div>
+                        <div class="col-md-4">
+                            {{ form.url|as_crispy_field }}
+                        </div>
+                        </div>
+
+
+                        <div class="row">
+                            <div class="col-md-4">
+                            {{ form.phone|as_crispy_field }}
+                        </div>
+                        <div class="col-md-4">
+                            {{ form.fax|as_crispy_field }}
+                        </div>
+                        <div class="col-md-4">
+                            {{ form.cell_phone|as_crispy_field }}
+                        </div>
+                        </div>
+
+
+                        <div class="row">
+
+                        <div class="col-md-4">
+                            {{ form.skype_name|as_crispy_field }}
+                        </div>
+                        <div class="col-md-4">
+                            {{ form.other_contact|as_crispy_field }}
+                        </div>
+                            <div class="col-md-4">
+                            {{ form.nyc_agency|as_crispy_field }}
+                        </div>
+                        </div>
+
+
+                        <div class="row">
+                        <div class="col-md-4">
+                            {{ form.legislature|as_crispy_field }}
+                        </div>
+                        <div class="col-md-4">
+                            {{ form.non_nys|as_crispy_field }}
+                        </div>
+                            <div class="col-md-4">
+                            {{ form.uai_bany|as_crispy_field }}
+                        </div>
+                        </div>
+
+
+                        <div class="row">
+                        <div class="col-md-4">
+                            {{ form.non_uai_bany|as_crispy_field }}
+                        </div>
+                        <div class="col-md-4">
+                            {{ form.private_sector|as_crispy_field }}
+                        </div>
+                            <div class="col-md-4">
+                            {{ form.other|as_crispy_field }}
+                        </div>
+                        </div>
+
+
+                        <div class="row">
+
+                        <div class="col-md-4">
+                            {{ form.special_intrest|as_crispy_field }}
+                        </div>
+                        <div class="col-md-4">
+                            {{ form.special_categories|as_crispy_field }}
+                        </div>
+                            <div class="col-md-4">
+                            {{ form.project_partners|as_crispy_field }}
+                        </div>
+                        </div>
+
+
+
+
 
                         <button>Submit</button>
                     </form>
