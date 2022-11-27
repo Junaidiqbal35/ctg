@@ -1,8 +1,10 @@
 from django.db import models
 
 # Create your models here.
-class FileMaker(models.Model):
+from django.urls import reverse
 
+
+class FileMaker(models.Model):
     NYC_AGENCY_CHOICES = (
         (1, 'VIP'),
         (2, 'Agencyhead'),
@@ -37,8 +39,8 @@ class FileMaker(models.Model):
         (13, 'Director'),
     )
     NON_UAI_BANY = (
-        (1,'VIP'),
-        (2,'Public Administration'),
+        (1, 'VIP'),
+        (2, 'Public Administration'),
     )
 
     sal = models.CharField(max_length=80)
@@ -69,3 +71,5 @@ class FileMaker(models.Model):
 
     nyc_agency = models.PositiveSmallIntegerField(choices=NYC_AGENCY_CHOICES, null=True)
 
+    def get_absolute_url(self):
+        return reverse('file_maker_detail', kwargs={"pk": self.pk})
